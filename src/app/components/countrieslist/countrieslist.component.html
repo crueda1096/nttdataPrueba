@@ -1,0 +1,52 @@
+<app-toolbar></app-toolbar>
+<mat-grid-list cols="2" rowHeight="80px">
+    <mat-grid-tile>
+        <mat-form-field class="inputfilter" appearance="outline" >
+            <mat-icon matPrefix>search</mat-icon>
+            <input id="filter" matInput placeholder="Search for a country..."  [formControl]="filter" (keyup)="filtercountries()">            
+        </mat-form-field>  
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+
+        <mat-form-field appearance="fill" class="selectregiones">
+            <mat-label>Filter by region</mat-label>
+            <mat-select [formControl]="region" disableRipple (selectionChange)="countriesbyregion()">
+              <mat-option value="">Filter by region</mat-option>
+              <mat-option value="Africa">Africa</mat-option>
+              <mat-option value="America">America</mat-option>
+              <mat-option value="Asia">Asia</mat-option>
+              <mat-option value="Europe">Europe</mat-option>
+              <mat-option value="Oceania">Oceania</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+    </mat-grid-tile>
+</mat-grid-list>
+
+<mat-grid-list cols="{{countriesrow}}" rowHeight="510px" class="list">
+    <mat-grid-tile *ngFor="let country of finalcountries;let i = index" >
+        <mat-card class="card">
+            <img class="img-card" (click)="detail(country.name.common)" mat-card-image src="{{country.flags.png}}" alt="Photo of a Shiba Inu">
+            <mat-card-content class="card-content">           
+                <ul>
+                    <li>
+                        <h2>{{country.name.official}}</h2>  
+                    </li>
+                    
+                    <li>
+                        <b>Population: </b>{{country.population}}
+                    </li>
+                    <li>                         
+                        <b>Region: </b>{{country.region}}
+                    </li>
+                    <li>
+                        <b>Capital: </b>{{country.capital}}
+                    </li>
+                </ul>
+            </mat-card-content>
+          </mat-card>
+    </mat-grid-tile>    
+</mat-grid-list>
+
+    

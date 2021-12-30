@@ -1,0 +1,38 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+button{
+    border-style:none ;
+    cursor: pointer;
+    background: content-box;
+    height: 100%;
+}
+
+::ng-deep body.dark-mode{
+    background-color: #04293A !important;
+    color: #dfe6e9;
+}
+
+::ng-deep body.light-mode {
+    background-color: #dfe6e9;
+    color: #000000;
+}
+
+button:hover{
+    color: darken(rgb(194, 192, 192), 10%);
+}
+
+::ng-deep  body.dark-mode mat-toolbar {  
+    background-color: #064663 !important;
+    color: #dfe6e9 !important;    
+}
+
+::ng-deep  body.dark-mode mat-toolbar button{  
+    background-color: #064663 !important;
+    color: #dfe6e9 !important;    
+
+    :hover{
+        color: darken(rgb(53, 53, 53), 10%);   
+    }
+}

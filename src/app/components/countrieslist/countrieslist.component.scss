@@ -1,0 +1,66 @@
+
+
+
+.inputfilter{
+    padding: 45px; 
+    width: 100%; 
+}
+
+.selectregiones{
+    padding: 47px; 
+    margin-left: auto; 
+}
+
+.card {
+    width: 350px;
+    /* height: 520px; */
+    margin-left:auto;
+    margin-right:auto; 
+    display: inline-block !important;
+    margin: auto !important;
+}
+
+.img-card{
+    cursor: pointer;
+    height: 250px;
+}
+
+.card-content{
+    width: 350px;
+    height: 140px;
+}
+
+ul li{
+    list-style: none;
+}
+
+
+::ng-deep body.dark-mode .mat-grid-list .mat-grid-tile .mat-figure .mat-card {
+        color: #dfe6e9 !important;    
+        background-color: #064663 !important;
+}
+
+::ng-deep body.dark-mode .mat-grid-list .mat-grid-tile .mat-figure .mat-form-field-outline {
+    background-color: #064663 !important;    
+}
+
+::ng-deep body.dark-mode .mat-grid-list .mat-grid-tile .mat-figure .mat-input-element::placeholder {
+    color: #dfe6e9 !important;    
+}
+
+::ng-deep body.dark-mode .mat-grid-list .mat-grid-tile .mat-figure .selectregiones .mat-form-field-flex {
+    background-color: #064663 !important;    
+}
+
+::ng-deep body.dark-mode .mat-grid-list .mat-grid-tile .mat-figure .mat-select-value {
+    color: #dfe6e9 !important;    
+}
+
+::ng-deep body.dark-mode .mat-grid-list .mat-grid-tile .mat-figure .mat-form-field-infix .mat-form-field-label-wrapper .mat-form-field-label mat-label{
+    color: #dfe6e9 !important;    
+}
+
+::ng-deep body.dark-mode .mat-grid-list .mat-grid-tile .mat-figure .mat-select-arrow-wrapper .mat-select-arrow {
+    color: #dfe6e9 !important;    
+}
+

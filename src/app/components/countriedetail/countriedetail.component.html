@@ -1,0 +1,79 @@
+<app-toolbar></app-toolbar>
+<mat-grid-list cols="2" rowHeight="80px">
+    <mat-grid-tile>
+        <button mat-icon-button (click)="back()" class="btn-back">
+            <mat-icon>arrow_back</mat-icon>
+            <span class="label-back" >Back</span>
+        </button>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<mat-grid-list cols="{{row}}" rowHeight="{{altura}}" class="list" *ngIf="errors == null">
+    <p *ngFor="let country of datapais;let i = index" >
+        <mat-grid-tile>
+            <mat-card class="detail-card-img">
+                <img class="img-detail"  mat-card-image src="{{country.flags.png}}" alt="{{country.name.official}}">
+            </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-card class="detail-card">                
+                <mat-card-content>  
+                    <table class="tabledetail">
+                        <tbody>
+                            <tr>
+                                <th colspan="1">
+                                    <h2>{{country.name.official}}</h2>  
+                                </th>                             
+                            <tr>
+                                <td>    
+                                    <ul>                                
+                                        <li>
+                                            <b>Native Name: </b>{{country.nombresnativos[0].official}}
+                                        </li>
+
+                                        <li>
+                                            <b>Population: </b>{{country.population}}
+                                        </li>
+                                        <li>                         
+                                            <b>Region: </b>{{country.region}}
+                                        </li>
+                                        <li>                         
+                                            <b>Sub Region: </b>{{country.subregion}}
+                                        </li>
+                                        <li>
+                                            <b>Capital: </b>{{country.capital}}
+                                        </li>
+                                    </ul>
+                                </td>
+
+                                    <ul>
+                                        <li>
+                                        </li>
+                                        
+                                        <li>
+                                            <b>Top Level Domain: </b>{{country.tld}}
+                                        </li>
+                                        <li>                         
+                                            <b>Currencies: </b>{{country.region}}
+                                        </li>
+                                        <li>
+                                            <b>Lenguages:</b> <span class="languages" *ngFor="let lang of country.idiomas;let i = index"> {{lang}} </span>
+                                        </li>
+                                    </ul>
+
+                                <td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>
+                                    <b>Border Countries:</b> <button (click)="detail(borders)" mat-button class="borders-buton" *ngFor="let borders of country.borders;let i = index"> {{borders}} </button>
+                                </th>
+                            </tr>
+                        </tfoot>
+                    </table>   
+                </mat-card-content>
+            </mat-card>
+        </mat-grid-tile>    
+    </p>
+</mat-grid-list>

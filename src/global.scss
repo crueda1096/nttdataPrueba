@@ -1,0 +1,17 @@
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+
+
+body.dark-mode{
+    background-color: #04293A !important;
+    color: #dfe6e9;
+}
+
+body.light-mode {
+    background-color: #dfe6e9;
+    color: #000000;
+}
+
+body:not(.dark-mode-preloading) {
+    transition: all 0.3s linear;
+}
